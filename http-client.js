@@ -1,11 +1,5 @@
-const http=require("http")
-url=process.argv[2]
-http.get(url,(res)=>{
-res.setEncoding("utf8")
-res.on('data', (chunk) => {
-console.log(chunk)
+const http = require("http");
+http.get(process.argv[2], (res) => {
+  res.setEncoding("utf8");
+  res.on("data", console.log);
 });
-
-}).on('error',() =>{
-console.log("Couldn't retrieve data")
-})
