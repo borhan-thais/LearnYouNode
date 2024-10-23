@@ -1,5 +1,5 @@
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 module.exports = function (dir, ext, callback) {
   fs.readdir(dir, (err, list) => {
     if (err) {
@@ -7,7 +7,7 @@ module.exports = function (dir, ext, callback) {
     }
     const filteredFiles = [];
     list.forEach((i) => {
-      const arr = i.split(".");
+      const arr = i.split('.');
       if (arr[1] == ext) {
         filteredFiles.push(i);
       }
